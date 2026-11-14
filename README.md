@@ -1,6 +1,5 @@
-# AetherDrive — Autonomous Cloud Workspace (showcase site)
-Static single-file site. Open index.html locally or deploy:
-1. GitHub: create repo, push index.html + README.md, Settings > Pages > Deploy from branch (main, /root).
-2. Vercel: import the repo, Framework "Other", no build command.
-Chatbot: paste a free Groq (gsk_) or Gemini (AIza) key; provider and model are auto-detected. Key stays in your browser.
+# AetherDrive v2
+Static showcase + Vercel serverless Copilot (/api/chat).
+Env vars (Vercel > Settings > Environment Variables): GROQ_API_KEY and/or GEMINI_API_KEY. Model auto-detected.
+Local Docker: docker compose up --build -> http://localhost:8080
 Designed & engineered by Nikhil Chary Sriramoju.

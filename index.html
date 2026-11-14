@@ -30,7 +30,7 @@
 <nav class="flex items-center justify-between px-6 md:px-12 lg:px-16 py-5 md:py-6">
 <div class="flex items-center gap-10">
 <a href="#" class="text-lg font-semibold tracking-tight">AetherDrive</a>
-<div class="hidden md:flex gap-8"><a class="nl" href="#features">Features</a><a class="nl" href="#stack">Stack</a><a class="nl" href="#security">Security</a><a class="nl" href="#creator">Creator</a></div>
+<div class="hidden md:flex gap-8"><a class="nl" href="#features">Features</a><a class="nl" href="#demo">Demo</a><a class="nl" href="#stack">Stack</a><a class="nl" href="#security">Security</a><a class="nl" href="#creator">Creator</a></div>
 </div>
 <div class="flex items-center gap-5">
 <a href="#creator" class="hidden md:block text-sm font-light text-white/80 hover:text-white">Reach Out</a>
@@ -87,6 +87,19 @@
 <p class="rv mt-6 text-xs text-white/50 font-light">Limits: 100 MB per chunked upload · 60 req/min per user rate limit · share links expire (max 30 days) · Copilot never writes without human confirmation.</p>
 </section>
 
+<section id="demo" class="py-20">
+<h2 class="rv font-serif2 text-4xl md:text-6xl mb-3">Try the <i>semantic</i> search</h2>
+<p class="rv text-white/60 font-light mb-8 max-w-xl">Live in-browser demo: intent-based file search (try "tax bill", "audio", "vision") beside the knowledge graph linking related documents.</p>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="card"><input id="q" placeholder="e.g. find my tax invoices Q3" class="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm outline-none mb-3"><div id="res" class="space-y-2 text-sm"></div></div>
+<div class="card !p-0 overflow-hidden"><canvas id="kg" class="w-full" style="height:300px"></canvas></div>
+</div></section>
+<section class="py-6"><div class="rv grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+<div class="card"><div class="font-serif2 text-4xl">9</div><div class="text-xs text-white/50">AI capabilities</div></div>
+<div class="card"><div class="font-serif2 text-4xl">6</div><div class="text-xs text-white/50">Docker services</div></div>
+<div class="card"><div class="font-serif2 text-4xl">3</div><div class="text-xs text-white/50">RBAC roles</div></div>
+<div class="card"><div class="font-serif2 text-4xl">0</div><div class="text-xs text-white/50">Trust assumed</div></div>
+</div></section>
 <!-- CREATOR -->
 <section id="creator" class="py-20">
 <h2 class="rv font-serif2 text-4xl md:text-6xl mb-8">Built by <i>Nikhil Chary Sriramoju</i></h2>
@@ -95,6 +108,7 @@
 <div class="text-white/50 text-xs uppercase tracking-widest mt-5 mb-2">Experience</div><p>Machine Learning Engineer Intern — Yuva Intern (NSDC)<br>Data Analytics Intern — Thiranex</p></div>
 <div class="card rv"><div class="text-white/50 text-xs uppercase tracking-widest mb-2">Certifications</div><ul class="space-y-1 text-sm"><li>NASSCOM / Skill India Digital Hub — AI-Data Engineering &amp; Cloud Infrastructure Analyst</li><li>IBM SkillsBuild — AI Fundamentals</li><li>Reliance Foundation — AI/ML Engineer Foundation</li></ul></div>
 </div>
+<div class="rv mt-6 card"><div class="text-white/50 text-xs uppercase tracking-widest mb-3">Core skills</div><div class="flex flex-wrap gap-2 text-xs"><span class="border border-white/20 rounded-full px-3 py-1">Python</span><span class="border border-white/20 rounded-full px-3 py-1">FastAPI</span><span class="border border-white/20 rounded-full px-3 py-1">LangGraph</span><span class="border border-white/20 rounded-full px-3 py-1">RAG / pgvector</span><span class="border border-white/20 rounded-full px-3 py-1">PyTorch CNN</span><span class="border border-white/20 rounded-full px-3 py-1">React</span><span class="border border-white/20 rounded-full px-3 py-1">Docker</span><span class="border border-white/20 rounded-full px-3 py-1">Data Analytics</span><span class="border border-white/20 rounded-full px-3 py-1">Machine Learning</span><span class="border border-white/20 rounded-full px-3 py-1">Cloud & Data Engineering</span></div><div class="text-white/50 text-xs uppercase tracking-widest mt-5 mb-2">Shipped on GitHub Pages / Vercel</div><p class="text-sm text-white/70 font-light">AeroVigil-X · SealMind AI · CARROM-X · NEON DRIVE · Voyagr · GitContext · KV Freight · and more at github.com/Nikhil-creat</p></div>
 <div class="rv mt-6 flex flex-wrap gap-3">
 <a class="bg-white text-black rounded-full px-6 py-2.5 text-sm font-medium" href="https://github.com/Nikhil-creat" target="_blank" rel="noopener">GitHub</a>
 <a class="border border-white/40 hover:bg-white/10 rounded-full px-6 py-2.5 text-sm" href="https://in.linkedin.com/in/nikhil-chary-sriramoju-95041b38a" target="_blank" rel="noopener">LinkedIn</a>
@@ -111,10 +125,10 @@
 <!-- CHAT -->
 <button id="fab" onclick="toggleChat()" class="fixed bottom-5 right-5 z-40 bg-white text-black rounded-full w-14 h-14 text-xl shadow-2xl">✦</button>
 <div id="chat" class="hidden fixed z-[55] bottom-0 right-0 sm:bottom-24 sm:right-5 w-full sm:w-[380px] h-[85vh] sm:h-[540px] bg-[#0b0d14] border border-white/15 sm:rounded-2xl flex flex-col shadow-2xl">
-<div class="flex items-center justify-between px-4 py-3 border-b border-white/10"><div><div class="font-medium text-sm">Aether Copilot</div><div id="status" class="text-[11px] text-white/50">No key — add Groq or Gemini key</div></div><button onclick="toggleChat(false)" class="text-white/60 text-lg">✕</button></div>
+<div class="flex items-center justify-between px-4 py-3 border-b border-white/10"><div><div class="font-medium text-sm">Aether Copilot</div><div id="status" class="text-[11px] text-white/50">Server Copilot ready · or add your own key</div></div><button onclick="toggleChat(false)" class="text-white/60 text-lg">✕</button></div>
 <div id="log" class="flex-1 overflow-y-auto p-3 space-y-2"><div class="msg bg-white/10">Hi! Paste a free Groq (gsk_…) or Gemini (AIza…) key below. I auto-detect the provider and the best available model. Ask me about AetherDrive or Nikhil.</div></div>
 <div class="p-3 border-t border-white/10 space-y-2">
-<input id="key" type="password" placeholder="Groq or Gemini API key (stored only in your browser)" class="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs outline-none">
+<input id="key" type="password" placeholder="Optional: your own Groq/Gemini key (browser only)" class="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs outline-none">
 <div class="flex gap-2"><input id="in" placeholder="Ask anything…" class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm outline-none"><button id="send" class="bg-white text-black rounded-full px-4 text-sm font-medium">Send</button></div>
 </div></div>
 
@@ -139,6 +153,22 @@ document.querySelectorAll('.nl').forEach(a=>a.className+=' text-white/80 hover:t
 // reveal
 const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+const D=[["Invoice_Q3_2026.pdf","finance tax invoice gst q3 bill"],["Receipt_Scan.jpg","receipt ocr cnn finance scan"],["Architecture.md","design fastapi pgvector docker system"],["Standup.mp3","audio whisper transcript meeting"],["ResNet_Report.docx","cnn vision model research"],["Pipeline_Design.pdf","design docker celery system"]];
+const SY={invoice:'bill gst',tax:'gst finance',audio:'whisper',vision:'cnn',image:'cnn scan',bill:'invoice finance',meeting:'audio'};
+function sc(q,d){let s=0;q.toLowerCase().split(/\W+/).filter(Boolean).forEach(w=>{if(d[1].includes(w)||d[0].toLowerCase().includes(w))s+=2;(SY[w]||'').split(' ').forEach(x=>x&&d[1].includes(x)&&(s+=1))});return s}
+let hl=[];
+function srch(){const q=$('q').value;const r=D.map(d=>[d,q?sc(q,d):0]).sort((a,b)=>b[1]-a[1]).slice(0,4);
+ $('res').innerHTML=r.map(([d,s])=>`<div class="flex justify-between border border-white/10 rounded-xl px-3 py-2"><span>${d[0]}</span><span class="text-white/50">${Math.min(s/5,1)*100|0}%</span></div>`).join('');hl=q?r.filter(x=>x[1]>0).map(x=>x[0][0]):[]}
+$('q').oninput=srch;srch();
+const cv=$('kg'),cx=cv.getContext('2d');
+function frame(t){const dp=devicePixelRatio||1,w=cv.clientWidth,hh=cv.clientHeight;if(cv.width!==w*dp){cv.width=w*dp;cv.height=hh*dp}
+ cx.setTransform(dp,0,0,dp,0,0);cx.clearRect(0,0,w,hh);
+ const P=D.map((d,i)=>{const a=i/D.length*6.283+t/6000;return[w/2+Math.cos(a)*w*.33,hh/2+Math.sin(a*1.0)*hh*.33+Math.sin(t/900+i)*6]});
+ D.forEach((a,i)=>D.forEach((b,j)=>{if(j>i&&a[1].split(' ').some(x=>b[1].split(' ').includes(x))){cx.strokeStyle='rgba(255,255,255,.18)';cx.beginPath();cx.moveTo(...P[i]);cx.lineTo(...P[j]);cx.stroke()}}));
+ D.forEach((d,i)=>{const on=hl.includes(d[0]);cx.fillStyle=on?'#fff':'rgba(255,255,255,.45)';cx.beginPath();cx.arc(P[i][0],P[i][1],on?7:4,0,6.283);cx.fill();cx.font='10px Inter';cx.fillStyle='rgba(255,255,255,.7)';cx.textAlign='center';cx.fillText(d[0].split('.')[0],P[i][0],P[i][1]-11)});
+ requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
 // chat
 function toggleChat(v){const c=$('chat');c.classList.toggle('hidden',v===undefined?!c.classList.contains('hidden'):!v)}
 $('key').value=localStorage.getItem('ad_key')||'';
@@ -157,7 +187,11 @@ async function detect(k){
  else throw Error('Key not recognised: Groq keys start with gsk_, Gemini with AIza.');
  $('status').textContent=cfg.p+' · '+cfg.m;return cfg}
 async function ask(q){
- const k=$('key').value.trim();if(!k)throw Error('Please paste an API key first.');localStorage.setItem('ad_key',k);
+ const k=$('key').value.trim();
+ if(!k){const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[...hist,{role:'user',content:q}].slice(-10)})}).catch(()=>null);
+  if(!r||!r.ok)throw Error('Server Copilot unavailable here. Paste your own Groq/Gemini key below.');
+  const o=await r.json();hist.push({role:'user',content:q},{role:'assistant',content:o.reply});$('status').textContent=o.model;return o.reply}
+ localStorage.setItem('ad_key',k);
  const c=await detect(k);hist.push({role:'user',content:q});let out;
  if(c.p==='groq'){const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+k},body:JSON.stringify({model:c.m,messages:[{role:'system',content:SYS},...hist.slice(-10)]})});
   if(!r.ok)throw Error('Groq error '+r.status);out=(await r.json()).choices[0].message.content}
