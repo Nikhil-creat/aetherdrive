@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AetherDrive: AI-native autonomous cloud workspace with agentic RAG, CNN vision and zero-trust security. By Nikhil Chary Sriramoju."><meta name="theme-color" content="#05060a"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%E2%9C%A6%3C/text%3E%3C/svg%3E"><title>AetherDrive — Autonomous Cloud Workspace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{serif2:['"Instrument Serif"','serif'],sans:['Inter','system-ui','sans-serif']}}}}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:#05060a;color:#fff;overflow-x:hidden}
+.ease{transition-timing-function:cubic-bezier(.76,0,.24,1)}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:1.25rem;padding:1.4rem;backdrop-filter:blur(10px);transition:.3s}
+.card:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
+.rv{opacity:0;transform:translateY(24px);transition:.8s}.rv.on{opacity:1;transform:none}
+#menu{pointer-events:none;opacity:0}#menu.open{pointer-events:auto;opacity:1}
+#menu a{opacity:0;transform:translateY(2rem);transition:.7s cubic-bezier(.76,0,.24,1)}#menu.open a{opacity:1;transform:none}
+.bar{height:2px;background:#fff;border-radius:9999px;transition:.5s cubic-bezier(.76,0,.24,1)}
+.msg{max-width:88%;padding:.55rem .8rem;border-radius:1rem;font-size:.85rem;line-height:1.45;white-space:pre-wrap}
+</style>
+</head>
+<body class="font-sans">
+
+<!-- HERO -->
+<section class="relative w-full h-screen overflow-hidden">
+<video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204103_f607742e-09da-4cf5-bb06-4e67b0a531de.mp4"></video>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="relative z-10 flex flex-col h-full">
+<nav class="flex items-center justify-between px-6 md:px-12 lg:px-16 py-5 md:py-6">
+<div class="flex items-center gap-10">
+<a href="#" class="text-lg font-semibold tracking-tight">AetherDrive</a>
+<div class="hidden md:flex gap-8"><a class="nl" href="#features">Features</a><a class="nl" href="#stack">Stack</a><a class="nl" href="#security">Security</a><a class="nl" href="#creator">Creator</a></div>
+</div>
+<div class="flex items-center gap-5">
+<a href="#creator" class="hidden md:block text-sm font-light text-white/80 hover:text-white">Reach Out</a>
+<button onclick="toggleChat(true)" class="hidden md:block bg-white text-black rounded-full px-5 py-2 text-sm font-medium">Ask Copilot</button>
+<button id="ham" aria-label="Menu" class="md:hidden relative z-[60] w-6 h-5 flex flex-col justify-between items-end"><span class="bar w-6"></span><span class="bar w-4"></span><span class="bar w-6"></span></button>
+</div>
+</nav>
+<div class="flex-1 flex flex-col items-center justify-start pt-4 sm:pt-6 md:pt-8 lg:pt-10 px-6 text-center">
+<h1 class="font-serif2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] max-w-5xl">YOUR DRIVE <i>that</i> THINKS,<br>ORGANIZES <i>and</i> PROTECTS<br>ITSELF</h1>
+<p class="mt-4 md:mt-5 text-white/70 text-sm md:text-base font-light max-w-md leading-relaxed">An AI-native cloud workspace with agentic RAG, CNN vision<br class="hidden sm:block"> and zero-trust security, built to be self-hosted.</p>
+<div class="mt-5 md:mt-6 flex flex-col sm:flex-row items-center gap-4">
+<a href="#features" class="group bg-white text-black rounded-full px-7 py-3 text-sm font-medium inline-flex items-center gap-2">Explore <span class="transition-transform group-hover:translate-x-0.5">→</span></a>
+<a href="#stack" class="border border-white/40 hover:bg-white/10 hover:border-white/60 rounded-full px-7 py-3 text-sm inline-flex items-center gap-2 transition">▶ Architecture</a>
+</div></div></div>
+</section>
+
+<!-- MOBILE MENU -->
+<div id="menu" class="fixed inset-0 z-50 md:hidden bg-black/90 backdrop-blur-xl transition-opacity duration-700 ease flex flex-col px-6 py-5">
+<div class="text-lg font-semibold mb-10">AetherDrive</div>
+<div class="flex-1 text-center font-serif2 text-4xl sm:text-5xl">
+<a class="block py-4 border-b border-white/10" style="transition-delay:150ms" href="#features">Features</a>
+<a class="block py-4 border-b border-white/10" style="transition-delay:230ms" href="#stack">Stack</a>
+<a class="block py-4 border-b border-white/10" style="transition-delay:310ms" href="#security">Security</a>
+<a class="block py-4 border-b border-white/10" style="transition-delay:390ms" href="#creator">Creator</a>
+<a class="block py-4 border-b border-white/10" style="transition-delay:470ms" href="#creator">Reach Out</a>
+</div>
+<button onclick="closeMenu();toggleChat(true)" class="w-full bg-white text-black rounded-full py-4 font-medium">Ask Copilot</button>
+</div>
+
+<main class="max-w-6xl mx-auto px-6 md:px-12">
+<!-- FEATURES -->
+<section id="features" class="py-20">
+<h2 class="rv font-serif2 text-4xl md:text-6xl mb-3">Everything a drive <i>should</i> do</h2>
+<p class="rv text-white/60 font-light mb-10 max-w-xl">Upload once. The pipeline extracts, embeds, tags and secures every file in the background.</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="fgrid"></div>
+</section>
+
+<!-- PIPELINE -->
+<section class="py-10">
+<h2 class="rv font-serif2 text-3xl md:text-5xl mb-8">Live processing <i>telemetry</i></h2>
+<div class="rv flex flex-wrap gap-3" id="pipe"></div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="py-20">
+<h2 class="rv font-serif2 text-4xl md:text-6xl mb-8">Architecture <i>&amp;</i> stack</h2>
+<div class="grid md:grid-cols-2 gap-4" id="sgrid"></div>
+</section>
+
+<!-- SECURITY -->
+<section id="security" class="py-10">
+<h2 class="rv font-serif2 text-4xl md:text-6xl mb-8">Zero-trust, <i>by default</i></h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="secgrid"></div>
+<p class="rv mt-6 text-xs text-white/50 font-light">Limits: 100 MB per chunked upload · 60 req/min per user rate limit · share links expire (max 30 days) · Copilot never writes without human confirmation.</p>
+</section>
+
+<!-- CREATOR -->
+<section id="creator" class="py-20">
+<h2 class="rv font-serif2 text-4xl md:text-6xl mb-8">Built by <i>Nikhil Chary Sriramoju</i></h2>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="card rv"><div class="text-white/50 text-xs uppercase tracking-widest mb-2">Education</div><p>B.Tech, Computer Science &amp; Engineering — Vaagdevi College of Engineering (2023–2027)</p>
+<div class="text-white/50 text-xs uppercase tracking-widest mt-5 mb-2">Experience</div><p>Machine Learning Engineer Intern — Yuva Intern (NSDC)<br>Data Analytics Intern — Thiranex</p></div>
+<div class="card rv"><div class="text-white/50 text-xs uppercase tracking-widest mb-2">Certifications</div><ul class="space-y-1 text-sm"><li>NASSCOM / Skill India Digital Hub — AI-Data Engineering &amp; Cloud Infrastructure Analyst</li><li>IBM SkillsBuild — AI Fundamentals</li><li>Reliance Foundation — AI/ML Engineer Foundation</li></ul></div>
+</div>
+<div class="rv mt-6 flex flex-wrap gap-3">
+<a class="bg-white text-black rounded-full px-6 py-2.5 text-sm font-medium" href="https://github.com/Nikhil-creat" target="_blank" rel="noopener">GitHub</a>
+<a class="border border-white/40 hover:bg-white/10 rounded-full px-6 py-2.5 text-sm" href="https://in.linkedin.com/in/nikhil-chary-sriramoju-95041b38a" target="_blank" rel="noopener">LinkedIn</a>
+<a class="border border-white/40 hover:bg-white/10 rounded-full px-6 py-2.5 text-sm" href="mailto:sriramojunikhil66@gmail.com">Email</a>
+</div>
+</section>
+</main>
+
+<footer class="border-t border-white/10 px-6 md:px-16 py-8 text-sm text-white/50 flex flex-col md:flex-row gap-3 justify-between">
+<span>© 2026 AetherDrive · Designed &amp; engineered by Nikhil Chary Sriramoju</span>
+<span>FastAPI · React · LangGraph · PyTorch · pgvector · Docker</span>
+</footer>
+
+<!-- CHAT -->
+<button id="fab" onclick="toggleChat()" class="fixed bottom-5 right-5 z-40 bg-white text-black rounded-full w-14 h-14 text-xl shadow-2xl">✦</button>
+<div id="chat" class="hidden fixed z-[55] bottom-0 right-0 sm:bottom-24 sm:right-5 w-full sm:w-[380px] h-[85vh] sm:h-[540px] bg-[#0b0d14] border border-white/15 sm:rounded-2xl flex flex-col shadow-2xl">
+<div class="flex items-center justify-between px-4 py-3 border-b border-white/10"><div><div class="font-medium text-sm">Aether Copilot</div><div id="status" class="text-[11px] text-white/50">No key — add Groq or Gemini key</div></div><button onclick="toggleChat(false)" class="text-white/60 text-lg">✕</button></div>
+<div id="log" class="flex-1 overflow-y-auto p-3 space-y-2"><div class="msg bg-white/10">Hi! Paste a free Groq (gsk_…) or Gemini (AIza…) key below. I auto-detect the provider and the best available model. Ask me about AetherDrive or Nikhil.</div></div>
+<div class="p-3 border-t border-white/10 space-y-2">
+<input id="key" type="password" placeholder="Groq or Gemini API key (stored only in your browser)" class="w-full bg-white/5 border border-white/10 rounded-full px-4 py-2 text-xs outline-none">
+<div class="flex gap-2"><input id="in" placeholder="Ask anything…" class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm outline-none"><button id="send" class="bg-white text-black rounded-full px-4 text-sm font-medium">Send</button></div>
+</div></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const F=[["Agentic Copilot","LangGraph agent with tools: cross-file search, summaries, and a human-in-the-loop Smart Auto-Organizer."],["Hybrid RAG","BM25 + pgvector HNSW cosine search, semantic 512–1024 token chunks, clickable file/page citations."],["CNN Vision","PyTorch ResNet-50/CLIP auto-tagging, scene detection, OCR and visual similarity search."],["Versioning","Re-upload creates a version stack; preview and restore any prior version."],["Knowledge Graph","GraphRAG entity extraction visualised as an interactive document graph."],["Media Intelligence","Whisper transcripts for audio/video with timestamped search."],["Offline-first","IndexedDB/OPFS + Yjs CRDTs sync notes and metadata on reconnect."],["Smart Folders","Natural-language rules (e.g. invoices → CSV) and an MCP endpoint for external agents."],["Command Palette","Ctrl+K for navigation, AI prompts and semantic search."]];
+$('fgrid').innerHTML=F.map((f,i)=>`<div class="card rv"><div class="text-white/40 text-xs mb-2">0${i+1}</div><h3 class="font-serif2 text-2xl mb-1">${f[0]}</h3><p class="text-sm text-white/65 font-light">${f[1]}</p></div>`).join('');
+const S=[["Backend","FastAPI async · SQLAlchemy asyncpg · Pydantic v2 · JWT/OAuth2 · WebSockets"],["Data","PostgreSQL + pgvector (HNSW) · Redis · MinIO presigned chunked uploads"],["AI/ML","LangGraph · PyTorch torchvision · Whisper · hybrid retriever"],["Frontend","React (Vite) · Tailwind · Framer Motion · Lucide · Axios"],["Workers","Celery + Redis: OCR, embeddings, CNN inference, PII scanning"],["Infra","Docker Compose: api, web, postgres, redis, worker, minio"]];
+$('sgrid').innerHTML=S.map(s=>`<div class="card rv"><h3 class="font-serif2 text-2xl mb-1">${s[0]}</h3><p class="text-sm text-white/65 font-light">${s[1]}</p></div>`).join('');
+const X=[["RBAC","Owner / Editor / Viewer roles"],["Share links","Password-protected and expiring"],["Audit logs","Immutable view/download trail"],["Vault","AES-GCM client-side encryption, SHA-256 dedup, PII/secret scanner"]];
+$('secgrid').innerHTML=X.map(s=>`<div class="card rv"><h3 class="font-serif2 text-xl mb-1">${s[0]}</h3><p class="text-xs text-white/65 font-light">${s[1]}</p></div>`).join('');
+const steps=["Uploading","Extracting","Indexing AI","Ready"];let p=0;
+function drawPipe(){$('pipe').innerHTML=steps.map((s,i)=>`<span class="px-4 py-2 rounded-full text-sm border ${i<p?'bg-white text-black border-white':i==p?'border-white animate-pulse':'border-white/20 text-white/40'}">${s}</span>`).join('');p=(p+1)%5}
+drawPipe();setInterval(drawPipe,1400);
+// menu
+const ham=$('ham'),menu=$('menu');
+function closeMenu(){menu.classList.remove('open');ham.classList.remove('open');setBars(false)}
+function setBars(o){const b=ham.children;b[0].style.transform=o?'translateY(9px) rotate(45deg)':'';b[1].style.opacity=o?0:1;b[2].style.transform=o?'translateY(-9px) rotate(-45deg)':'';b[0].style.width=b[2].style.width=''}
+ham.onclick=()=>{const o=!menu.classList.contains('open');menu.classList.toggle('open',o);setBars(o)};
+menu.querySelectorAll('a').forEach(a=>a.onclick=closeMenu);
+document.querySelectorAll('.nl').forEach(a=>a.className+=' text-white/80 hover:text-white text-sm font-light transition-colors duration-200');
+// reveal
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// chat
+function toggleChat(v){const c=$('chat');c.classList.toggle('hidden',v===undefined?!c.classList.contains('hidden'):!v)}
+$('key').value=localStorage.getItem('ad_key')||'';
+const SYS="You are Aether Copilot for AetherDrive, an AI-native cloud workspace (FastAPI, React, LangGraph, pgvector hybrid RAG, PyTorch CNN, MinIO, Celery, Docker, zero-trust security). It was designed by Nikhil Chary Sriramoju, final-year B.Tech CSE student at Vaagdevi College of Engineering, ML Engineer Intern at Yuva Intern (NSDC), Data Analytics Intern at Thiranex, certified by NASSCOM/Skill India, IBM SkillsBuild and Reliance Foundation. Be concise and helpful.";
+let cfg=null,hist=[];
+function add(t,me){const d=document.createElement('div');d.className='msg '+(me?'bg-white text-black ml-auto':'bg-white/10');d.textContent=t;$('log').appendChild(d);$('log').scrollTop=1e9;return d}
+async function detect(k){
+ if(cfg&&cfg.k===k)return cfg;
+ if(k.startsWith('gsk_')){const r=await fetch('https://api.groq.com/openai/v1/models',{headers:{Authorization:'Bearer '+k}});if(!r.ok)throw Error('Groq key rejected ('+r.status+')');
+  const ids=(await r.json()).data.map(m=>m.id).filter(i=>!/whisper|guard|tts|embed|playai/i.test(i));
+  const pref=['llama-3.3-70b-versatile','llama-3.1-70b-versatile','llama-3.1-8b-instant'];
+  cfg={k,p:'groq',m:pref.find(x=>ids.includes(x))||ids[0]}}
+ else if(k.startsWith('AIza')){const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models?key='+k);if(!r.ok)throw Error('Gemini key rejected ('+r.status+')');
+  const ms=(await r.json()).models.filter(m=>(m.supportedGenerationMethods||[]).includes('generateContent')).map(m=>m.name.replace('models/',''));
+  cfg={k,p:'gemini',m:ms.find(x=>/flash/.test(x)&&!/lite|exp|preview|thinking/.test(x))||ms.find(x=>/flash/.test(x))||ms[0]}}
+ else throw Error('Key not recognised: Groq keys start with gsk_, Gemini with AIza.');
+ $('status').textContent=cfg.p+' · '+cfg.m;return cfg}
+async function ask(q){
+ const k=$('key').value.trim();if(!k)throw Error('Please paste an API key first.');localStorage.setItem('ad_key',k);
+ const c=await detect(k);hist.push({role:'user',content:q});let out;
+ if(c.p==='groq'){const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+k},body:JSON.stringify({model:c.m,messages:[{role:'system',content:SYS},...hist.slice(-10)]})});
+  if(!r.ok)throw Error('Groq error '+r.status);out=(await r.json()).choices[0].message.content}
+ else{const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${c.m}:generateContent?key=${k}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:hist.slice(-10).map(h=>({role:h.role==='user'?'user':'model',parts:[{text:h.content}]}))})});
+  if(!r.ok)throw Error('Gemini error '+r.status);out=(await r.json()).candidates[0].content.parts.map(x=>x.text).join('')}
+ hist.push({role:'assistant',content:out});return out}
+async function send(){const q=$('in').value.trim();if(!q)return;$('in').value='';add(q,true);const w=add('…');try{w.textContent=await ask(q)}catch(e){hist.pop();w.textContent='⚠ '+e.message}}
+$('send').onclick=send;$('in').onkeydown=e=>e.key==='Enter'&&send();
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();toggleChat(true);$('in').focus()}});
+</script>
+</body>
+</html>
