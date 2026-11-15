@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+pgvector
+pydantic>=2
+pyjwt
+celery[redis]
+redis
+minio
+pypdf
+httpx
+langgraph
+numpy

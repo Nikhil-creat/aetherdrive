@@ -1,1 +1,8 @@
-{"name":"aetherdrive","version":"2.0.0","private":true}
+{
+  "name": "aetherdrive",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "eval": "node evals/run.js"
+  }
+}

@@ -1,4 +1,5 @@
 // Vercel serverless Copilot proxy: keys live in env vars, never in the browser.
+const { guard } = require("../lib/guard");
 const hits = new Map();
 const SYS = "You are Aether Copilot for AetherDrive, an AI-native cloud workspace (FastAPI, React, LangGraph, pgvector hybrid RAG, PyTorch CNN, MinIO, Celery, Docker, zero-trust security), designed by Nikhil Chary Sriramoju, final-year B.Tech CSE student at Vaagdevi College of Engineering, ML Engineer Intern at Yuva Intern (NSDC) and Data Analytics Intern at Thiranex. Be concise.";
 module.exports = async (req, res) => {
@@ -11,6 +12,9 @@ module.exports = async (req, res) => {
   const msgs = ((req.body && req.body.messages) || []).slice(-10).map(m => ({
     role: m.role === "assistant" ? "assistant" : "user", content: String(m.content || "").slice(0, 2000) }));
   if (!msgs.length) return res.status(400).json({ error: "No messages" });
+  msgs.forEach(m => { m.content = guard(m.content).clean; });
+  if (guard(((req.body.messages || []).slice(-1)[0] || {}).content).injection)
+    return res.json({ reply: "Blocked by the AetherDrive guard: that looks like a prompt-injection attempt.", model: "guard" });
   try {
     if (process.env.GROQ_API_KEY) {
       const H = { Authorization: "Bearer " + process.env.GROQ_API_KEY, "Content-Type": "application/json" };
